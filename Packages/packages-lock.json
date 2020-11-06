@@ -114,13 +114,13 @@
       }
     },
     "net.slothsoft.unity-extensions": {
-      "version": "https://github.com/Faulo/UnityExtensions.git#0.1.16",
+      "version": "https://github.com/Faulo/UnityExtensions.git#0.1.17",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.test-framework": "1.0.13"
       },
-      "hash": "97eeea11b579c843118ecd7c3b9ab025a0d06fb8"
+      "hash": "6aac1171c4565c1ec9f4e5739a0c83b0aab6c276"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
