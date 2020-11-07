@@ -39,7 +39,8 @@ namespace Runtime.Physics {
                 shape.shapeType = ParticleSystemShapeType.Hemisphere;
                 shape.arc = 360;
                 shape.radius = attachedWind.windRadius;
-                shape.position = Vector3.down * attachedWind.strength * attachedWind.windHeight / 2;
+                //shape.position = Vector3.down * attachedWind.strength * attachedWind.windHeight / 2;
+                shape.position = Vector3.zero;
                 shape.rotation = new Vector3(90, 0, 0);
                 var emission = attachedParticles.emission;
                 emission.rateOverTime = particleEmissionRate * particlesOverStrength.Evaluate(Mathf.Abs(attachedWind.strength));
