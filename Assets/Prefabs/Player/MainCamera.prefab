@@ -60,8 +60,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 3
-  m_ZDamping: 3
+  m_YDamping: 2
+  m_ZDamping: 2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 1
+    m_MaxSpeed: 0.75
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 50
+    m_MaxSpeed: 25
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -442,7 +442,7 @@ MonoBehaviour:
     m_Radius: 0.25
   - m_Height: 0
     m_Radius: 1.5
-  - m_Height: 1
+  - m_Height: -1
     m_Radius: 0.25
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -583,8 +583,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 3
-  m_ZDamping: 3
+  m_YDamping: 2
+  m_ZDamping: 2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -709,8 +709,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 3
-  m_ZDamping: 3
+  m_YDamping: 2
+  m_ZDamping: 2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
