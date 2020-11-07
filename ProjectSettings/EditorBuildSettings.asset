@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LuisabauteinHaus.unity
-    guid: 51447b57add7069489dd63d7379bbc90
+    path: Assets/Scenes/RootScene.unity
+    guid: 4451600671e91fe49aa7b3e20d119780
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bbd950095e9776a4885539974c761e09, type: 2}

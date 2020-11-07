@@ -24,8 +24,6 @@ namespace Runtime.Player {
         }
 
         [Header("Mouse controls")]
-        [SerializeField, Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
-        bool invertY = false;
         [SerializeField]
         CinemachineAxisInput axisInput = default;
 
