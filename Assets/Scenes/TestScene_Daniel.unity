@@ -191,7 +191,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -223,61 +223,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Name
       value: Wind (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7548312638647638164, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_RootOrder
@@ -535,61 +483,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Name
       value: Wind (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7548312638647638164, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_RootOrder
@@ -727,7 +623,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532876610}
-  m_LocalRotation: {x: 1e-45, y: 0.18086334, z: 0, w: 0.9835082}
+  m_LocalRotation: {x: -1e-45, y: 0.18086334, z: 0, w: 0.9835082}
   m_LocalPosition: {x: 144.93526, y: 4.4456778, z: 380.7429}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1282,7 +1178,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921035778}
-  m_LocalRotation: {x: 3e-45, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -1e-45, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1299,59 +1195,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].tangentMode
-      value: 34
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Name
       value: Wind
-      objectReference: {fileID: 0}
-    - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7548312638647638164, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_RootOrder
@@ -1752,7 +1600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8626911842698384219, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: ShapeModule.m_Position.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8626911842698384219, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -1772,61 +1620,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Name
       value: Wind (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7548312638647638164, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_RootOrder
@@ -1948,7 +1744,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738647776}
-  m_LocalRotation: {x: 3e-45, y: -0, z: -1e-45, w: 1}
+  m_LocalRotation: {x: -1e-45, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2022,7 +1818,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819668688}
-  m_LocalRotation: {x: 3e-45, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -1e-45, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

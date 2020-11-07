@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: particlesOverStrength.m_Curve.Array.size
