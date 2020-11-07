@@ -5,7 +5,6 @@
 *.cs text
 *.meta text
 *.prefab text
-*.asset text
 
 # files that should never be normalized
 *.png binary
