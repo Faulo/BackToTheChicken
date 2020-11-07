@@ -11,7 +11,7 @@ namespace Runtime.Physics {
         [SerializeField, Range(0, 10)]
         float particleEmissionRate = 5;
         [SerializeField]
-        AnimationCurve particlesOverStrength = default;
+        AnimationCurve particlesOverStrength = new AnimationCurve();
 
         void Awake() {
             OnValidate();
