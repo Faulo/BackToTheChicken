@@ -29,11 +29,16 @@ namespace Runtime.Player {
         [SerializeField]
         CinemachineAxisInput axisInput = default;
 
+        Vector2 direction;
+
 
 
         InputAction lookAction;
         InputAction scrollAction;
         InputAction middleButtonAction;
+
+        InputAction leftStickAction;
+        InputAction rightStickAction;
 
         void Awake() {
             OnValidate();
@@ -51,15 +56,31 @@ namespace Runtime.Player {
             middleButtonAction = map.AddAction("middleButton", binding: "<Mouse>/middleButton");
             middleButtonAction.performed += OnMidleClick;
 
+            leftStickAction = map.AddAction("leftStick", binding: "<Gamepad>/leftStick");
+            rightStickAction = map.AddAction("rightStick", binding: "<Gamepad>/rightStick");
+
             lookAction.Enable();
             scrollAction.Enable();
             middleButtonAction.Enable();
+
+            leftStickAction.Enable();
+            rightStickAction.Enable();
         }
 
         void Update() {
-            axisInput.input = Cursor.lockState == CursorLockMode.Locked
-                ? lookAction.ReadValue<Vector2>()
-                : Vector2.zero;
+            if (Cursor.lockState == CursorLockMode.Locked) {
+                axisInput.input = lookAction.ReadValue<Vector2>();
+                if (leftButtonDown) {
+                    direction = Vector2.up;
+                } else if (rightButtonDown) {
+                    direction = Vector2.down;
+                } else {
+                    direction = Vector2.zero;
+                }
+            } else {
+                axisInput.input = rightStickAction.ReadValue<Vector2>();
+                direction = leftStickAction.ReadValue<Vector2>();
+            }
         }
 
         void OnMidleClick(InputAction.CallbackContext context) {
