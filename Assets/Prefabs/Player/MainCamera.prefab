@@ -60,8 +60,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_YDamping: 3
+  m_ZDamping: 3
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -112,15 +112,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0.25
+  m_LookaheadTime: 0.5
   m_LookaheadSmoothing: 5
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 1
-  m_VerticalDamping: 1
+  m_HorizontalDamping: 5
+  m_VerticalDamping: 5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.2
+  m_DeadZoneHeight: 0.2
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
@@ -267,7 +267,10 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   targetDistance: 1
   movementDuration: 1
+  invertX: 1
+  invertY: 1
   axisInput: {fileID: 3354399252543733443}
+  wind: {fileID: 6428266987802283257}
 --- !u!114 &3354399252543733440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,17 +324,17 @@ MonoBehaviour:
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_MinimumDistanceFromTarget: 0.1
-  m_AvoidObstacles: 1
+  m_MinimumDistanceFromTarget: 0.5
+  m_AvoidObstacles: 0
   m_DistanceLimit: 0
-  m_MinimumOcclusionTime: 0
+  m_MinimumOcclusionTime: 0.03125
   m_CameraRadius: 0.1
   m_Strategy: 2
   m_MaximumEffort: 4
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 1
+  m_OptimalTargetDistance: 1.5
 --- !u!114 &3354399252543733443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +386,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 2
+    m_MaxSpeed: 1
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -407,7 +410,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 75
+    m_MaxSpeed: 50
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -433,13 +436,13 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_BindingMode: 5
-  m_SplineCurvature: 0.2
+  m_SplineCurvature: 1
   m_Orbits:
   - m_Height: 1
     m_Radius: 0.25
   - m_Height: 0
-    m_Radius: 1
-  - m_Height: -1
+    m_Radius: 1.5
+  - m_Height: 1
     m_Radius: 0.25
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -580,8 +583,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_YDamping: 3
+  m_ZDamping: 3
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -632,15 +635,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0.25
+  m_LookaheadTime: 0.5
   m_LookaheadSmoothing: 5
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 1
-  m_VerticalDamping: 1
+  m_HorizontalDamping: 5
+  m_VerticalDamping: 5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.2
+  m_DeadZoneHeight: 0.2
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
@@ -706,8 +709,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_YDamping: 3
+  m_ZDamping: 3
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -758,15 +761,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0.25
+  m_LookaheadTime: 0.5
   m_LookaheadSmoothing: 5
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 1
-  m_VerticalDamping: 1
+  m_HorizontalDamping: 5
+  m_VerticalDamping: 5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.2
+  m_DeadZoneHeight: 0.2
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
@@ -1088,3 +1091,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2267576463340621564, guid: 803431b7db265694494074c17f60a876, type: 3}
   m_PrefabInstance: {fileID: 3354399253614077505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6428266987802283257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8626911842684627640, guid: 803431b7db265694494074c17f60a876, type: 3}
+  m_PrefabInstance: {fileID: 3354399253614077505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d53d73302cb4be4298f0588ac37c6ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
