@@ -6,14 +6,17 @@ using UnityEngine.InputSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class FeatherController : MonoBehaviour
 {
     private bool blowed = false;
+    private Vector3 nextBlowForce = Vector3.zero;
     public GameObject TargetObject;
+    public Rigidbody BlowRigidbody;
     public float TargetDistance = 4;
-    public double moveSpeed = 1.0f;
+    public float MoveSpeed = 1.0f;
 
     [Header("Movement Settings")]
     [Tooltip("Exponential boost factor on translation, controllable by mouse wheel.")]
@@ -94,11 +97,13 @@ public class FeatherController : MonoBehaviour
         if (IsRightMouseButtonDown())
         {
             Cursor.lockState = CursorLockMode.Locked;
-            var mouseMovement = GetInputLookRotation() * Time.deltaTime * 5;
+            Vector3 mouseMovement = GetInputLookRotation() * Time.deltaTime * 5;
             if (invertY)
+            {
                 mouseMovement.y = -mouseMovement.y;
+            }
 
-            var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
+            float mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
 
             if (Math.Abs(mouseMovement.x) > 0.1f)
             {
@@ -117,7 +122,7 @@ public class FeatherController : MonoBehaviour
             transform.Rotate(0, 0, -transform.eulerAngles.z);
         }
 
-        UnityEngine.Debug.Log(GetDistanceVectorToTargetObject().magnitude);
+        //UnityEngine.Debug.Log(GetDistanceVectorToTargetObject().magnitude);
 
         //transform.position = TargetObject.transform.position - (GetDistanceVectorToTargetObject().normalized * 4.0f);
 
@@ -126,28 +131,29 @@ public class FeatherController : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
+    }
 
+    void blowRoutine() 
+    {
 #if ENABLE_INPUT_SYSTEM
             if(Mouse.current.leftButton.isPressed && !blowed) 
             {
-                blowed = true;
-                TargetObject.transform.Translate(GetDistanceVectorToTargetObject() * Time.deltaTime * 3.0f);
+                // TODO add blow mechanic with wind force
             } else if(!Mouse.current.leftButton.isPressed)
             {
-                blowed = false;
+                // TODO add blow mechanic with wind force
             }
 #else
         if (Input.GetMouseButtonDown(0))
         {
+            // TODO add blow mechanic with wind force
 
-            TargetObject.transform.Translate(GetCamViewDirection() * Time.deltaTime * 3.0f);
         }
-        else if(!Mouse.current.leftButton.isPressed)
+        else if (!Mouse.current.leftButton.isPressed)
         {
-            blowed = false;
+            // TODO add blow mechanic with wind force
         }
 #endif
-
     }
 
     Vector3 GetRotationVector() 
@@ -193,3 +199,4 @@ public class FeatherController : MonoBehaviour
 #endif
     }
 }
+
