@@ -24,7 +24,7 @@ namespace Runtime.Physics {
                  1 => Vector3.up,
                  2 => Vector3.forward,
                  _ => throw new System.NotImplementedException()
-             } * strength 
+             } * strength
              : Vector3.zero;
         public Ray windRay => new Ray(windCenter, windDirection);
         public float windRadius => attachedCollider

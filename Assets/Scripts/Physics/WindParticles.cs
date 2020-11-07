@@ -11,8 +11,11 @@ namespace Runtime.Physics {
         [SerializeField, Range(0, 10)]
         float particleEmissionRate = 5;
         [SerializeField]
-        AnimationCurve particlesOverStrength = default;
+        AnimationCurve particlesOverStrength = new AnimationCurve();
 
+        void Awake() {
+            OnValidate();
+        }
         void OnValidate() {
             if (!attachedWind) {
                 attachedWind = GetComponentInParent<WindSource>();
@@ -31,19 +34,20 @@ namespace Runtime.Physics {
             UpdateForceField();
         }
         void UpdateParticles() {
-            if (attachedParticles) {
+            if (attachedWind && attachedParticles) {
                 var shape = attachedParticles.shape;
                 shape.shapeType = ParticleSystemShapeType.Hemisphere;
                 shape.arc = 360;
                 shape.radius = attachedWind.windRadius;
-                shape.position = Vector3.down * attachedWind.strength * attachedWind.windHeight / 2;
+                //shape.position = Vector3.down * attachedWind.strength * attachedWind.windHeight / 2;
+                shape.position = Vector3.zero;
                 shape.rotation = new Vector3(90, 0, 0);
                 var emission = attachedParticles.emission;
                 emission.rateOverTime = particleEmissionRate * particlesOverStrength.Evaluate(Mathf.Abs(attachedWind.strength));
             }
         }
         void UpdateForceField() {
-            if (attachedForceField) {
+            if (attachedWind && attachedForceField) {
                 attachedForceField.shape = ParticleSystemForceFieldShape.Cylinder;
                 attachedForceField.startRange = 0;
                 attachedForceField.endRange = attachedWind.windRadius;
