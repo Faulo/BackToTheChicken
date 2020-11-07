@@ -13,6 +13,9 @@ namespace Runtime.Physics {
         [SerializeField]
         AnimationCurve particlesOverStrength = default;
 
+        void Awake() {
+            OnValidate();
+        }
         void OnValidate() {
             if (!attachedWind) {
                 attachedWind = GetComponentInParent<WindSource>();
@@ -31,7 +34,7 @@ namespace Runtime.Physics {
             UpdateForceField();
         }
         void UpdateParticles() {
-            if (attachedParticles) {
+            if (attachedWind && attachedParticles) {
                 var shape = attachedParticles.shape;
                 shape.shapeType = ParticleSystemShapeType.Hemisphere;
                 shape.arc = 360;
@@ -43,7 +46,7 @@ namespace Runtime.Physics {
             }
         }
         void UpdateForceField() {
-            if (attachedForceField) {
+            if (attachedWind && attachedForceField) {
                 attachedForceField.shape = ParticleSystemForceFieldShape.Cylinder;
                 attachedForceField.startRange = 0;
                 attachedForceField.endRange = attachedWind.windRadius;
