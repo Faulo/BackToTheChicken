@@ -6,63 +6,13 @@ using UnityEngine.InputSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class FeatherController : MonoBehaviour
 {
-    class CameraState
-    {
-        public float yaw;
-        public float pitch;
-        public float roll;
-        public float x;
-        public float y;
-        public float z;
-
-        public void SetFromTransform(Transform t)
-        {
-            pitch = t.eulerAngles.x;
-            yaw = t.eulerAngles.y;
-            roll = t.eulerAngles.z;
-            x = t.position.x;
-            y = t.position.y;
-            z = t.position.z;
-        }
-
-        public void Translate(Vector3 translation)
-        {
-            Vector3 rotatedTranslation = Quaternion.Euler(pitch, yaw, roll) * translation;
-
-            x += rotatedTranslation.x;
-            y += rotatedTranslation.y;
-            z += rotatedTranslation.z;
-        }
-
-        public void LerpTowards(CameraState target, float positionLerpPct, float rotationLerpPct)
-        {
-            yaw = Mathf.Lerp(yaw, target.yaw, rotationLerpPct);
-            pitch = Mathf.Lerp(pitch, target.pitch, rotationLerpPct);
-            roll = Mathf.Lerp(roll, target.roll, rotationLerpPct);
-
-            x = Mathf.Lerp(x, target.x, positionLerpPct);
-            y = Mathf.Lerp(y, target.y, positionLerpPct);
-            z = Mathf.Lerp(z, target.z, positionLerpPct);
-        }
-
-        public void UpdateTransform(Transform t)
-        {
-            t.eulerAngles = new Vector3(pitch, yaw, roll);
-            t.position = new Vector3(x, y, z);
-        }
-    }
-
-    private CameraState targetCameraState = new CameraState();
-    private CameraState interpolatingCameraState = new CameraState();
     private bool blowed = false;
     public GameObject TargetObject;
-    public float TargetDistance = 25;
+    public float TargetDistance = 4;
     public double moveSpeed = 1.0f;
 
     [Header("Movement Settings")]
@@ -124,10 +74,11 @@ public class FeatherController : MonoBehaviour
         }
 #endif
 
-    void OnEnable()
+    void OnDrawGizmosSelected()
     {
-        targetCameraState.SetFromTransform(transform);
-        interpolatingCameraState.SetFromTransform(transform);
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(TargetObject.transform.position, TargetDistance);
     }
 
     // Update is called once per frame
@@ -137,6 +88,7 @@ public class FeatherController : MonoBehaviour
         UnityEngine.Debug.DrawLine(transform.position, transform.position + GetRotationVector(), new Color(0, 255, 0));
         UnityEngine.Debug.DrawLine(transform.position, transform.position + GetCamViewDirection(), new Color(255, 0, 0));
         UnityEngine.Debug.DrawLine(transform.position, transform.position + GetDistanceVectorToTargetObject(), new Color(0, 0, 255));
+
 
         // Hide and lock cursor when right mouse button pressed
         if (IsRightMouseButtonDown())
@@ -148,32 +100,31 @@ public class FeatherController : MonoBehaviour
 
             var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
 
-            targetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
-            targetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
+            if (Math.Abs(mouseMovement.x) > 0.1f)
+            {
+                Vector3 rotVec = Vector3.up;
+                rotVec = Quaternion.AngleAxis(transform.rotation.eulerAngles.x, Vector3.right) * rotVec;
+                transform.RotateAround(TargetObject.transform.position, rotVec, mouseMovement.x * mouseSensitivityFactor);
+            }
 
-            transform.RotateAround(TargetObject.transform.position, Vector3.up, mouseMovement.x * mouseSensitivityFactor);
-            transform.RotateAround(TargetObject.transform.position, Vector3.right, mouseMovement.y * mouseSensitivityFactor);
+            if (Math.Abs(mouseMovement.y) > 0.1f)
+            {
+                Vector3 rotVec = Vector3.right;
+                rotVec = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * rotVec;
+                transform.RotateAround(TargetObject.transform.position, rotVec, mouseMovement.y * mouseSensitivityFactor);
+            }
 
-            //transform.RotateAround(TargetObject.transform.position, Vector3.up, 20 * Time.deltaTime);
-
+            transform.Rotate(0, 0, -transform.eulerAngles.z);
         }
 
-        if (Math.Abs(GetDistanceVectorToTargetObject().magnitude - TargetDistance) > Math.Abs(0.05f)) 
-        {
-            transform.Translate(GetDistanceVectorToTargetObject() * (GetDistanceVectorToTargetObject().magnitude - TargetDistance) * Time.deltaTime);
-        }
+        UnityEngine.Debug.Log(GetDistanceVectorToTargetObject().magnitude);
 
-        if (GetRotationVector().normalized != GetDistanceVectorToTargetObject().normalized)
-        {
-            transform.rotation = Quaternion.LookRotation(GetDistanceVectorToTargetObject());
-
-        }
+        //transform.position = TargetObject.transform.position - (GetDistanceVectorToTargetObject().normalized * 4.0f);
 
         if (IsRightMouseButtonUp())
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-
         }
 
 #if ENABLE_INPUT_SYSTEM
@@ -213,20 +164,6 @@ public class FeatherController : MonoBehaviour
     Vector3 GetDistanceVectorToTargetObject()
     {
         return this.TargetObject.transform.position - this.transform.position;
-    }
-
-    Vector3 GetInputTranslationDirection()
-    {
-        Vector3 direction = new Vector3(
-            this.TargetObject.transform.position.x - this.transform.position.x,
-            this.TargetObject.transform.position.y - this.transform.position.y,
-            this.TargetObject.transform.position.z - this.transform.position.z
-        );
-        if (Math.Abs(direction.magnitude - this.TargetDistance) > Math.Abs(1.0)) {
-            return direction * (direction.magnitude - this.TargetDistance);
-        }
-
-        return Vector3.zero;
     }
 
     Vector2 GetInputLookRotation()
