@@ -3,16 +3,16 @@ using UnityEngine;
 namespace Runtime {
     public class RotateAroundAxis : MonoBehaviour {
         [SerializeField]
-        float degreePerSecond;
+        public float degreePerSecond;
         [SerializeField]
-        Vector3 axis;
+        public Vector3 axis;
         // Start is called before the first frame update
         void Start() {
 
         }
 
         void Update() {
-            transform.RotateAround(axis, degreePerSecond * Time.deltaTime);
+            transform.Rotate(axis, degreePerSecond * Time.deltaTime);
         }
     }
 }
