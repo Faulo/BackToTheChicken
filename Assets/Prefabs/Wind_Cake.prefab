@@ -1,59 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8626911843800798824
+--- !u!1001 &2831040299723834584
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.0625
-      objectReference: {fileID: 0}
-    - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
-      propertyPath: particlesOverStrength.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Name
-      value: Wind_Player
+      value: Wind_Cake
       objectReference: {fileID: 0}
     - target: {fileID: 7548312638647638164, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_RootOrder
