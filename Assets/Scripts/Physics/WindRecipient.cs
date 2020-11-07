@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 
 namespace Runtime.Physics {
@@ -11,6 +12,7 @@ namespace Runtime.Physics {
             }
         }
         public void AddForce(Vector3 force, Vector3 torque) {
+            //Debug.Log($"Adding {force} to {this}");
             attachedRigidbody.AddForce(force, ForceMode.Force);
             attachedRigidbody.AddTorque(torque, ForceMode.Force);
         }

@@ -23,6 +23,6 @@ public class MovementTest : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody.useGravity = false;
-        if (useGravity) rigidbody.AddForce(Physics.gravity * (rigidbody.mass * rigidbody.mass));
+        if (useGravity) rigidbody.AddForce(Physics.gravity * (rigidbody.mass * rigidbody.mass) * 0.01f);
     }
 }
