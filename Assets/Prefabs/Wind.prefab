@@ -3395,7 +3395,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    range: {x: 2, y: 3}
+    range: {x: 1, y: 2}
     separateAxes: 0
   RotationBySpeedModule:
     enabled: 0
