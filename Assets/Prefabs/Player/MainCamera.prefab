@@ -1006,15 +1006,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_DirectionCurveX.scalar
-      value: 0
+      value: 0.35576117
       objectReference: {fileID: 0}
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_DirectionCurveY.scalar
-      value: 1
+      value: -3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_DirectionCurveZ.scalar
-      value: 3e-45
+      value: 0.9345769
       objectReference: {fileID: 0}
     - target: {fileID: 2246787546281763508, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Name
