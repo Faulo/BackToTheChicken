@@ -15,9 +15,9 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 22ed23b156e1a5544a1e9c97a64ccf93, type: 3}
   mixer: {fileID: 24300002, guid: 59a1239bfa1f46442b4f47649bea1ce5, type: 2}
-  spatialBlend: 0
-  mininumPitch: 1
-  maxmimumPitch: 1
+  spatialBlend: 1
+  mininumPitch: 0.9
+  maxmimumPitch: 1.1
   mininumVolume: 1
   maxmimumVolume: 1
   loop: 0

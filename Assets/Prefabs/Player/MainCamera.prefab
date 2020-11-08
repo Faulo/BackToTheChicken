@@ -270,6 +270,21 @@ MonoBehaviour:
   invertY: 1
   axisInput: {fileID: 3354399252543733443}
   wind: {fileID: 6428266987802283257}
+  onFeatherCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b97592a0a92655b4580194b1c9c4b84c, type: 2}
+        m_TargetAssemblyTypeName: Runtime.Effects.AudioEffect, Runtime
+        m_MethodName: Invoke
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   featherCount: 1
   featherMaximum: 20
   minimumForce: 100
