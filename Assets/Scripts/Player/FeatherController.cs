@@ -7,7 +7,7 @@ namespace Runtime.Player {
         [SerializeField]
         public bool isMain = false;
         [SerializeField]
-        public FeatherController targetFeather = default;
+        FeatherController targetFeather = default;
         [SerializeField]
         AnimationCurve gravityOverDistance = default;
         void Awake() {
@@ -22,6 +22,15 @@ namespace Runtime.Player {
             if (targetFeather) {
                 var distance = targetFeather.transform.position - transform.position;
                 attachedRigidbody.AddForce(distance.normalized * gravityOverDistance.Evaluate(distance.magnitude) * Time.deltaTime, ForceMode.Force);
+            }
+        }
+
+        public bool SetTarget(FeatherController targetObject) {
+            if (targetFeather != targetObject) {
+                targetFeather = targetObject;
+                return true;
+            } else {
+                return false;
             }
         }
     }

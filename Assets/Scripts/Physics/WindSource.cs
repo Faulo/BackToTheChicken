@@ -12,7 +12,7 @@ namespace Runtime.Physics {
         [SerializeField]
         public Vector3 direction = Vector3.up;
         [SerializeField, Range(0, 10000)]
-        float force = 1000;
+        public float force = 1000;
         [SerializeField, Range(0, 10000)]
         float torque = 10;
         [SerializeField, Range(0, 1)]
