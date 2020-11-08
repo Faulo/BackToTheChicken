@@ -26,7 +26,7 @@ namespace Runtime.Player {
         [SerializeField]
         EffectEvent onFeatherCollect = default;
         [SerializeField]
-        int featherCount = 1;
+        public int featherCount = 1;
         [SerializeField]
         int featherMaximum = 100;
         float featherRatio => (float)featherCount / featherMaximum;
