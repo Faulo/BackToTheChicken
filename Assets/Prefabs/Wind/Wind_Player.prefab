@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3174452876752166354, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3174452876752166354, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3174452876752166354, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 63dc0f64180549f46b78a192ee048f04, type: 2}
+    - target: {fileID: -3174452876752166354, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3174452876752166354, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Invoke
+      objectReference: {fileID: 0}
+    - target: {fileID: -3174452876752166354, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Runtime.Effects.AudioEffect, Runtime
+      objectReference: {fileID: 0}
+    - target: {fileID: -3174452876752166354, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1123976496, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Name
       value: Particles_Wind
