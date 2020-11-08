@@ -6,11 +6,11 @@ namespace Runtime.Physics {
         public event Action<Collider> onColliderEnter;
 
         [SerializeField]
-        SphereCollider attachedCollider = default;
+        CapsuleCollider attachedCollider = default;
         [SerializeField, Range(-1, 1)]
         public float strength = 1;
         [SerializeField]
-        public Vector2 direction = Vector2.up;
+        public Vector3 direction = Vector3.up;
         [SerializeField, Range(0, 10000)]
         float force = 1000;
         [SerializeField, Range(0, 10000)]
@@ -22,13 +22,13 @@ namespace Runtime.Physics {
         public Vector3 windCenter => attachedCollider
             ? transform.position + attachedCollider.center
             : transform.position;
-        public Vector3 windDirection => transform.rotation * new Vector3(direction.x, 0, direction.y);
+        public Vector3 windDirection => transform.rotation * direction;
         public Ray windRay => new Ray(windCenter, windDirection);
         public float windRadius => attachedCollider
             ? attachedCollider.radius
             : 0;
         public float windHeight => attachedCollider
-            ? attachedCollider.radius
+            ? attachedCollider.height
             : 0;
         void Awake() {
             OnValidate();
@@ -47,8 +47,8 @@ namespace Runtime.Physics {
             }
         }
         Vector3 CalculateForce(WindRecipient recipient) {
-            var distance = Vector3.Cross(windDirection, recipient.position - windCenter);
-            float radius = distance.magnitude / windRadius;
+            var distance = recipient.position - windCenter;
+            float radius = distance.magnitude / (windRadius + windHeight);
             float multiplier = Time.deltaTime;
             multiplier *= force;
             multiplier *= strengthOverRadius.Evaluate(radius);
@@ -57,8 +57,8 @@ namespace Runtime.Physics {
             return direction * multiplier;
         }
         Vector3 CalculateTorque(WindRecipient recipient) {
-            var distance = Vector3.Cross(windDirection, recipient.position - windCenter);
-            float radius = distance.magnitude / windRadius;
+            var distance = recipient.position - windCenter;
+            float radius = distance.magnitude / (windRadius + windHeight);
             float multiplier = Time.deltaTime;
             multiplier *= torque;
             multiplier *= strengthOverRadius.Evaluate(radius);

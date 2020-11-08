@@ -103,7 +103,7 @@ namespace Runtime.Player {
                 axisInput.input = look;
             }
             if (wind) {
-                wind.direction = direction;
+                wind.direction = new Vector3(direction.x, 0, direction.y);
                 wind.strength = direction.magnitude;
             }
         }

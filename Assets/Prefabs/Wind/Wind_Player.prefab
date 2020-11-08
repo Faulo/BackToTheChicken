@@ -8,8 +8,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1123976496, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: m_Name
+      value: Particles_Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123976496, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123976499, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -62,6 +66,14 @@ PrefabInstance:
     - target: {fileID: 4725853947309215201, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: particlesOverStrength.m_Curve.Array.data[1].tangentMode
       value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864261079074679674, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: m_Height
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864261079074679674, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7536426272423818460, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Name
