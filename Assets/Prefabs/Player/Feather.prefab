@@ -95,7 +95,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &4868959332748957889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +109,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachedRigidbody: {fileID: 4868523347367480464}
+  maximumDrag: 10
+  dragOverWetness:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  wetness: 0
 --- !u!114 &2862553308139968689
 MonoBehaviour:
   m_ObjectHideFlags: 0
