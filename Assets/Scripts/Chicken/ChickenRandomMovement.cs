@@ -3,8 +3,7 @@ using UnityEngine.AI;
 
 
 namespace Runtime.Chicken {
-    public class ChickenRandomMovement : MonoBehaviour
-    {
+    public class ChickenRandomMovement : MonoBehaviour {
         [SerializeField, Range(-20, 20)]
         float randomPosMinX = -10;
         [SerializeField, Range(-20, 20)]
@@ -37,16 +36,14 @@ namespace Runtime.Chicken {
         }
 
         // Start is called before the first frame update
-        void Start()
-        {
+        void Start() {
             agent = GetComponent<NavMeshAgent>();
             agent.destination = GetRandomVector();
             agent.updateRotation = true;
         }
 
         // Update is called once per frame
-        void Update()
-        {
+        void Update() {
             if (agent.pathStatus == NavMeshPathStatus.PathPartial ||
                 agent.pathStatus == NavMeshPathStatus.PathInvalid ||
                 !agent.hasPath) {
@@ -65,15 +62,14 @@ namespace Runtime.Chicken {
             }
         }
 
-        
+
 
         bool IsWaitingTimeOver() {
             if (lastTimeUpdate < 0) {
                 lastTimeUpdate = Time.time;
                 currentWaitingTime = Random.Range(waitingTimeMin, waitingTimeMax);
-                Debug.Log(currentWaitingTime);
 
-            } else if(Time.time - lastTimeUpdate >= currentWaitingTime) {
+            } else if (Time.time - lastTimeUpdate >= currentWaitingTime) {
                 lastTimeUpdate = currentWaitingTime = -1;
                 return true;
             }
@@ -81,10 +77,9 @@ namespace Runtime.Chicken {
             return false;
         }
 
-        Vector3 GetRandomVector()
-        {
+        Vector3 GetRandomVector() {
             return new Vector3(
-                Random.Range(randomPosMinX, randomPosMaxX), transform.position.y, 
+                Random.Range(randomPosMinX, randomPosMaxX), transform.position.y,
                 Random.Range(randomPosMinZ, randomPosMaxZ)
             );
         }
