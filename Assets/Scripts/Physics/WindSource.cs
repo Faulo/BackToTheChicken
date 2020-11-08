@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Runtime.Physics {
     public class WindSource : MonoBehaviour {
         [SerializeField]
-        CapsuleCollider attachedCollider = default;
+        SphereCollider attachedCollider = default;
         [SerializeField, Range(-1, 1)]
         public float strength = 1;
         [SerializeField]
@@ -19,20 +19,17 @@ namespace Runtime.Physics {
         public Vector3 windCenter => attachedCollider
             ? transform.position + attachedCollider.center
             : transform.position;
-        public Vector3 windDirection => transform.rotation * new Vector3(direction.x, direction.y, 0);
+        public Vector3 windDirection => transform.rotation * new Vector3(direction.x, 0, direction.y);
         public Ray windRay => new Ray(windCenter, windDirection);
         public float windRadius => attachedCollider
             ? attachedCollider.radius
             : 0;
         public float windHeight => attachedCollider
-            ? attachedCollider.height
+            ? attachedCollider.radius
             : 0;
         void OnValidate() {
             if (!attachedCollider) {
                 TryGetComponent(out attachedCollider);
-            }
-            if (attachedCollider) {
-                attachedCollider.direction = 1;
             }
         }
         void OnTriggerStay(Collider other) {
