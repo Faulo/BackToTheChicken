@@ -3,7 +3,27 @@ guid: 04048e1374243344fb596534585b137a
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BretterMaterial
+    second: {fileID: 2100000, guid: b6c1d5ac9959fa94faa4e1aa47e50d58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DachMaterial
+    second: {fileID: 2100000, guid: 1159dad5d21983043a619be793240359, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuesseMaterial
+    second: {fileID: 2100000, guid: 1159dad5d21983043a619be793240359, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HolzMaterial
+    second: {fileID: 2100000, guid: b6c1d5ac9959fa94faa4e1aa47e50d58, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -82,6 +82,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6b55c37edc597a64685f98135474cf88, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1159dad5d21983043a619be793240359, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 6b55c37edc597a64685f98135474cf88, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1159dad5d21983043a619be793240359, type: 2}
     - target: {fileID: 919132149155446097, guid: 6b55c37edc597a64685f98135474cf88, type: 3}
       propertyPath: m_Name
       value: Structure_Roof_Edge_Eave
