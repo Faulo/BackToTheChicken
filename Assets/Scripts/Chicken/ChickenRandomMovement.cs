@@ -31,7 +31,7 @@ namespace Runtime.Chicken {
                 Debug.LogError("The minimum waiting time must be smaller or equal to the maximum waiting time!");
             }
             if (animator == null) {
-                Debug.LogError("The game object has no animator");
+                Debug.LogError("The game object has no animator!");
                 animator.GetComponentInChildren<Animator>();
             }
         }
@@ -55,10 +55,12 @@ namespace Runtime.Chicken {
                 if (IsWaitingTimeOver()) {
                     var destination = GetRandomVector();
                     agent.destination = GetRandomVector();
+                    targetRotation = Quaternion.LookRotation(destination - transform.position, Vector3.up);
                 }
 
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.05f);
+
             } else {
-                Debug.DrawLine(transform.position, transform.position + agent.velocity);
                 animator.SetBool("move", true);
             }
         }
