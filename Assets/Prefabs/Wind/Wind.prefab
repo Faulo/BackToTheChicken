@@ -788,7 +788,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5
+      value: 0.5
       mode: 0
       spread: 0
       speed:
@@ -4867,8 +4867,8 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 2
     m_StartRange: 0
-    m_EndRange: 5
-    m_Length: 28.35
+    m_EndRange: 0.5
+    m_Length: 1
     m_GravityFocus: 0
     m_RotationRandomness: {x: 0, y: 0}
     m_DirectionCurveX:
@@ -5362,7 +5362,7 @@ GameObject:
   - component: {fileID: 7548312638647638164}
   - component: {fileID: 1166589136}
   - component: {fileID: 7289362542486306210}
-  - component: {fileID: 1166589137}
+  - component: {fileID: 3846584730387067909}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -5398,7 +5398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d53d73302cb4be4298f0588ac37c6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedCollider: {fileID: 1166589137}
+  attachedCollider: {fileID: 3846584730387067909}
   strength: 1
   direction: {x: 0, y: 1}
   force: 1000
@@ -5453,8 +5453,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1166589137
-CapsuleCollider:
+--- !u!135 &3846584730387067909
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5463,9 +5463,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5
-  m_Height: 23.35
-  m_Direction: 1
+  serializedVersion: 2
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8382057986934435766
 GameObject:
