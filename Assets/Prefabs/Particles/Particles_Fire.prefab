@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6609997380235264240}
   - component: {fileID: 6609997380235264243}
   m_Layer: 0
-  m_Name: Fire
+  m_Name: Particles_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -496,7 +496,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -549,7 +549,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1.0471976
       minScalar: 0
       maxCurve:
@@ -1002,17 +1002,17 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0.3836178
           value: 0.46399653
-          inSlope: -3.4018574
-          outSlope: -3.4018574
+          inSlope: -4.742413
+          outSlope: -4.742413
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.57322824
-          value: 0
-          inSlope: -1.2235521
-          outSlope: -1.2235521
+          time: 0.47322214
+          value: 0.004486084
+          inSlope: -2.568366
+          outSlope: -2.568366
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -1020,8 +1020,8 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: 0
-          outSlope: 0
+          inSlope: -0.008516083
+          outSlope: -0.008516083
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334

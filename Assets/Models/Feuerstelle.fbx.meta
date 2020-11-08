@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 548c32c2c6de4404d903c1c319544774
+guid: 32146e269d1de364d95d72389ac57a7b
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: blinn2
-    second: {fileID: 2100000, guid: f16f6d42cecdc0c4bade35efd8f3d8d4, type: 2}
+      name: GraueSTeine
+    second: {fileID: 2100000, guid: 7d60e32fb0b15424dba594de796edadb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: blinn3
-    second: {fileID: 2100000, guid: f16f6d42cecdc0c4bade35efd8f3d8d4, type: 2}
+      name: Ketten
+    second: {fileID: 2100000, guid: 7d60e32fb0b15424dba594de796edadb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 4156002973242278026, guid: 73aa5a28e822e604eb6ba93a164f39b0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
