@@ -210,7 +210,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -5
+      scalar: -1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -326,7 +326,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.03125
+      scalar: 0.001
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -788,7 +788,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5
+      value: 0.5
       mode: 0
       spread: 0
       speed:
@@ -3264,7 +3264,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3420,7 +3420,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    range: {x: 1, y: 2}
+    range: {x: 0, y: 0.5}
     separateAxes: 0
   RotationBySpeedModule:
     enabled: 0
@@ -3973,7 +3973,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.04
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4023,7 +4023,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 0.2
+    minVertexDistance: 0.001
     textureMode: 0
     ribbonCount: 1
     shadowBias: 0.5
@@ -4867,8 +4867,8 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 2
     m_StartRange: 0
-    m_EndRange: 5
-    m_Length: 28.35
+    m_EndRange: 0.5
+    m_Length: 1
     m_GravityFocus: 0
     m_RotationRandomness: {x: 0, y: 0}
     m_DirectionCurveX:
@@ -4927,7 +4927,7 @@ ParticleSystemForceField:
     m_DirectionCurveY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4980,7 +4980,7 @@ ParticleSystemForceField:
     m_DirectionCurveZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5362,7 +5362,7 @@ GameObject:
   - component: {fileID: 7548312638647638164}
   - component: {fileID: 1166589136}
   - component: {fileID: 7289362542486306210}
-  - component: {fileID: 1166589137}
+  - component: {fileID: 3846584730387067909}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -5382,6 +5382,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1123976497}
+  - {fileID: 8907214425179696306}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5397,8 +5398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d53d73302cb4be4298f0588ac37c6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedCollider: {fileID: 1166589137}
+  attachedCollider: {fileID: 3846584730387067909}
   strength: 1
+  direction: {x: 0, y: 1}
   force: 1000
   torque: 10
   randomness: 0.1
@@ -5451,8 +5453,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1166589137
-CapsuleCollider:
+--- !u!135 &3846584730387067909
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5461,7 +5463,51 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5
-  m_Height: 23.35
-  m_Direction: 1
+  serializedVersion: 2
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &8382057986934435766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8907214425179696306}
+  - component: {fileID: 4631994958695462984}
+  m_Layer: 0
+  m_Name: WindZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8907214425179696306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382057986934435766}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7548312638647638164}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!182 &4631994958695462984
+WindZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382057986934435766}
+  m_Enabled: 1
+  m_Mode: 0
+  m_Radius: 20
+  m_WindMain: 1
+  m_WindTurbulence: 1
+  m_WindPulseMagnitude: 0.5
+  m_WindPulseFrequency: 0.01

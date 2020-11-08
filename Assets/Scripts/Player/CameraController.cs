@@ -1,3 +1,4 @@
+using Runtime.Physics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,11 +24,15 @@ namespace Runtime.Player {
             transform.rotation = targetRotation;
         }
 
-        [Header("Mouse controls")]
+        [Header("Wind controls")]
+        [SerializeField]
+        bool invertX = false;
+        [SerializeField]
+        bool invertY = false;
         [SerializeField]
         CinemachineAxisInput axisInput = default;
-
-        Vector2 direction;
+        [SerializeField]
+        WindSource wind = default;
 
 
 
@@ -66,8 +71,10 @@ namespace Runtime.Player {
         }
 
         void Update() {
+            Vector2 look;
+            Vector2 direction;
             if (Cursor.lockState == CursorLockMode.Locked) {
-                axisInput.input = lookAction.ReadValue<Vector2>();
+                look = lookAction.ReadValue<Vector2>();
                 if (leftButtonDown) {
                     direction = Vector2.up;
                 } else if (rightButtonDown) {
@@ -76,8 +83,22 @@ namespace Runtime.Player {
                     direction = Vector2.zero;
                 }
             } else {
-                axisInput.input = rightStickAction.ReadValue<Vector2>();
+                look = rightStickAction.ReadValue<Vector2>();
                 direction = leftStickAction.ReadValue<Vector2>();
+            }
+            if (invertX) {
+                look.x *= -1;
+            }
+            if (invertY) {
+                look.y *= -1;
+            }
+            direction = Vector2.ClampMagnitude(direction, 1);
+            if (axisInput) {
+                axisInput.input = look;
+            }
+            if (wind) {
+                wind.direction = direction;
+                wind.strength = direction.magnitude;
             }
         }
 

@@ -3,9 +3,11 @@ using UnityEngine;
 namespace Runtime.Physics {
     public class WindSource : MonoBehaviour {
         [SerializeField]
-        CapsuleCollider attachedCollider = default;
+        SphereCollider attachedCollider = default;
         [SerializeField, Range(-1, 1)]
         public float strength = 1;
+        [SerializeField]
+        public Vector2 direction = Vector2.up;
         [SerializeField, Range(0, 10000)]
         float force = 1000;
         [SerializeField, Range(0, 10000)]
@@ -17,28 +19,17 @@ namespace Runtime.Physics {
         public Vector3 windCenter => attachedCollider
             ? transform.position + attachedCollider.center
             : transform.position;
-        public Vector3 windDirection => attachedCollider
-             ? transform.rotation * attachedCollider.direction switch
-             {
-                 0 => Vector3.right,
-                 1 => Vector3.up,
-                 2 => Vector3.forward,
-                 _ => throw new System.NotImplementedException()
-             } * strength
-             : Vector3.zero;
+        public Vector3 windDirection => transform.rotation * new Vector3(direction.x, 0, direction.y);
         public Ray windRay => new Ray(windCenter, windDirection);
         public float windRadius => attachedCollider
             ? attachedCollider.radius
             : 0;
         public float windHeight => attachedCollider
-            ? attachedCollider.height
+            ? attachedCollider.radius
             : 0;
         void OnValidate() {
             if (!attachedCollider) {
                 TryGetComponent(out attachedCollider);
-            }
-            if (attachedCollider) {
-                attachedCollider.direction = 1;
             }
         }
         void OnTriggerStay(Collider other) {
@@ -50,7 +41,6 @@ namespace Runtime.Physics {
             var distance = Vector3.Cross(windDirection, recipient.position - windCenter);
             float radius = distance.magnitude / windRadius;
             float multiplier = Time.deltaTime;
-            multiplier *= strength;
             multiplier *= force;
             multiplier *= strengthOverRadius.Evaluate(radius);
             var direction = windDirection;
@@ -61,15 +51,13 @@ namespace Runtime.Physics {
             var distance = Vector3.Cross(windDirection, recipient.position - windCenter);
             float radius = distance.magnitude / windRadius;
             float multiplier = Time.deltaTime;
-            multiplier *= strength;
             multiplier *= torque;
             multiplier *= strengthOverRadius.Evaluate(radius);
             return distance * multiplier;
         }
         void OnDrawGizmos() {
             Gizmos.color = Color.green;
-            var extend = windDirection * windHeight;
-            Gizmos.DrawLine(windCenter - extend, windCenter + extend);
+            Gizmos.DrawLine(windCenter, windCenter + windDirection);
         }
     }
 }
