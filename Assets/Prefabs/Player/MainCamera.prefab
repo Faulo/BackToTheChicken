@@ -265,8 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  targetDistance: 1
-  movementDuration: 1
+  cinemachine: {fileID: 3354399252543733441}
   invertX: 1
   invertY: 1
   axisInput: {fileID: 3354399252543733443}

@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace Runtime.Physics {
     public class WindSource : MonoBehaviour {
+        public event Action<Collider> onColliderEnter;
+
         [SerializeField]
         SphereCollider attachedCollider = default;
         [SerializeField, Range(-1, 1)]
@@ -27,10 +30,16 @@ namespace Runtime.Physics {
         public float windHeight => attachedCollider
             ? attachedCollider.radius
             : 0;
+        void Awake() {
+            OnValidate();
+        }
         void OnValidate() {
             if (!attachedCollider) {
                 TryGetComponent(out attachedCollider);
             }
+        }
+        void OnTriggerEnter(Collider other) {
+            onColliderEnter?.Invoke(other);
         }
         void OnTriggerStay(Collider other) {
             if (other.attachedRigidbody && other.attachedRigidbody.TryGetComponent<WindRecipient>(out var recipient)) {
@@ -44,7 +53,7 @@ namespace Runtime.Physics {
             multiplier *= force;
             multiplier *= strengthOverRadius.Evaluate(radius);
             var direction = windDirection;
-            direction = Vector3.Lerp(direction, Random.insideUnitSphere, randomness);
+            direction = Vector3.Lerp(direction, UnityEngine.Random.insideUnitSphere, randomness);
             return direction * multiplier;
         }
         Vector3 CalculateTorque(WindRecipient recipient) {
