@@ -270,6 +270,51 @@ MonoBehaviour:
   invertY: 1
   axisInput: {fileID: 3354399252543733443}
   wind: {fileID: 6428266987802283257}
+  onFeatherCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b97592a0a92655b4580194b1c9c4b84c, type: 2}
+        m_TargetAssemblyTypeName: Runtime.Effects.AudioEffect, Runtime
+        m_MethodName: Invoke
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  featherCount: 1
+  featherMaximum: 20
+  minimumForce: 100
+  maximumForce: 500
+  minimumRadius: 1
+  maximumRadius: 5
+  windOverCount:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3354399252543733440
 MonoBehaviour:
   m_ObjectHideFlags: 0

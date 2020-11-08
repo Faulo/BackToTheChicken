@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b64eb72abc4395943952ace006315200, type: 3}
-  m_Name: Audio_SFX_Test
+  m_Name: Audio_SFX_Tropfen2
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 1f43dc4d7f54c354697996df711c408a, type: 3}
+  - {fileID: 8300000, guid: af78525c2eb843444a6c0a743a678cd1, type: 3}
   mixer: {fileID: 24300002, guid: 59a1239bfa1f46442b4f47649bea1ce5, type: 2}
   spatialBlend: 1
   mininumPitch: 0.9

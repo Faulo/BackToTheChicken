@@ -95,7 +95,7 @@ MonoBehaviour:
   onStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1840cc668e0b535438aa52dc6dab43f6, type: 2}
+      - m_Target: {fileID: 11400000, guid: fdc4bdf3e097c4042824d0548a34da82, type: 2}
         m_TargetAssemblyTypeName: Runtime.Effects.AudioEffect, Runtime
         m_MethodName: Invoke
         m_Mode: 0
