@@ -22,14 +22,12 @@ namespace Runtime.Chicken {
         NavMeshAgent agent;
         float lastTimeUpdate = -1;
         float currentWaitingTime = -1;
-        float startPosY;
-        Vector3 targetPositon;
         Quaternion targetRotation;
 
         void Awake() {
             if (waitingTimeMin > waitingTimeMax) {
                 Debug.LogError("The minimum waiting time must be smaller or equal to the maximum waiting time!");
-            }            
+            }     
         }
 
         // Start is called before the first frame update
@@ -37,7 +35,6 @@ namespace Runtime.Chicken {
         {
             agent = GetComponent<NavMeshAgent>();
             agent.destination = GetRandomVector();
-            startPosY = transform.position.y;
         }
 
         // Update is called once per frame
@@ -49,26 +46,21 @@ namespace Runtime.Chicken {
                 !agent.hasPath)
             {
                 if (IsWaitingTimeOver()) {
-                    Vector3 destination = GetRandomVector();
+                    var destination = GetRandomVector();
                     targetRotation = Quaternion.LookRotation(destination - transform.position, Vector3.up);
-                    targetPositon = transform.position;
-                    targetPositon.y = 1;
                 }
 
                 if (transform.rotation == targetRotation) {
                     agent.destination = GetRandomVector();
                 } else {
+                    var rigidbody = GetComponent<Rigidbody>();
                     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.05f);
                 }
-
-                if (transform.position != targetPositon) {
-                    Vector3 velocity = Vector3.zero;
-                    targetPositon = Vector3.SmoothDamp(transform.position, targetPositon, ref velocity, 1.0f, 1.0f);
-                } else {
-                    
-                }
+                
             }
         }
+
+        
 
         bool IsWaitingTimeOver() {
             if (lastTimeUpdate < 0) {
