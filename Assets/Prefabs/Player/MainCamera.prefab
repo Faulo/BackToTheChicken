@@ -286,7 +286,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   featherCount: 1
-  featherMaximum: 20
+  featherMaximum: 40
   minimumForce: 100
   maximumForce: 500
   minimumRadius: 1
