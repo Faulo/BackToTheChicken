@@ -23,7 +23,7 @@ public class Befeuchter : MonoBehaviour
     void OnTriggerStay(Collider other) {
         var comp = other.GetComponentInParent<WindRecipient>();
         if (comp != null) {
-            comp.wetness -= wetPerSecond * Time.deltaTime;
+            comp.wetness += wetPerSecond * Time.deltaTime;
         }
     }
 }
