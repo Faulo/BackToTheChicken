@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &8095736180912139986
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662837809831192592}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af34ca85656f2ac4184a8d8c9228ed5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8095736180527666242
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,8 +30,10 @@ GameObject:
   - component: {fileID: 8095736180527666241}
   - component: {fileID: 8095736180527666247}
   - component: {fileID: 8095736180527666240}
+  - component: {fileID: 6637949348382862023}
+  - component: {fileID: 8276245485089725429}
   m_Layer: 0
-  m_Name: Chicken 1
+  m_Name: Chicken_RandomWalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,8 +62,8 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8095736180527666242}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.25
   m_Speed: 1
   m_Acceleration: 1
   avoidancePriority: 50
@@ -51,7 +72,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 0.4
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -67,32 +88,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f06ae635dceeb459bc6f1da2aed9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomPosMinX: -10
-  randomPosMinZ: -10
-  randomPosMaxX: 10
-  randomPosMaxZ: 10
+  randomPosMinX: -20
+  randomPosMinZ: -20
+  randomPosMaxX: 20
+  randomPosMaxZ: 20
   waitingTimeMin: 2
   waitingTimeMax: 5
   animator: {fileID: 8095736180912139986}
---- !u!95 &8095736180912139986
-Animator:
-  serializedVersion: 3
+--- !u!54 &6637949348382862023
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4662837809831192592}
+  m_GameObject: {fileID: 8095736180527666242}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &8276245485089725429
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095736180527666242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af34ca85656f2ac4184a8d8c9228ed5b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.47, z: 0}
 --- !u!1001 &8095736180912139997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 216797315989731913, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 725391706096291394, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_RootOrder
@@ -118,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1395526409693740026, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1632873175350844924, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1779654778349760302, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_RootOrder
@@ -190,15 +221,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298615259826248823, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.007
-      objectReference: {fileID: 0}
-    - target: {fileID: 4298615259826248823, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4298615259826248823, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.209
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298615259826248823, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.498
+      value: 0.548
       objectReference: {fileID: 0}
     - target: {fileID: 4298615259826248823, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -266,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6834092400465477659, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6834092400465477659, guid: ac89c64d16becc04eb19d06917ac86d8, type: 3}
       propertyPath: m_LocalScale.x
