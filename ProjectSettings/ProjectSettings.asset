@@ -12,7 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: "Robin Daraban, Michael Heller, Markus H\xFCl\xDF, Lisa Kast, Veronica
+    Kramme, Andr\xE9 Lautner, Jan Martens, Luisa Meinlschmidt, Daniel Schulz"
   productName: Back to the Chicken
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}

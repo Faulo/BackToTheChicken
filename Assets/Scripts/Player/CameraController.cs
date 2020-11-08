@@ -126,7 +126,6 @@ namespace Runtime.Player {
             if (wind) {
                 wind.direction = new Vector3(direction.x, 0, direction.y);
                 wind.strength = direction.magnitude;
-                Debug.Log(windOverCount.Evaluate(featherCount));
                 wind.force = minimumForce + (windOverCount.Evaluate(featherRatio) * (maximumForce - minimumForce));
                 wind.radius = minimumRadius + (windOverCount.Evaluate(featherRatio) * (maximumRadius - minimumRadius));
             }
