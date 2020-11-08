@@ -8,10 +8,14 @@ namespace Runtime.Physics {
         ParticleSystem attachedParticles = default;
         [SerializeField]
         ParticleSystemForceField attachedForceField = default;
-        [SerializeField, Range(0, 10)]
+        [SerializeField, Range(0, 100)]
         float particleEmissionRate = 5;
         [SerializeField]
         AnimationCurve particlesOverStrength = new AnimationCurve();
+        [SerializeField, Range(0, 100)]
+        float forceFieldStrength = 1;
+        [SerializeField]
+        AnimationCurve forceFieldOverStrength = new AnimationCurve();
 
         void Awake() {
             OnValidate();
@@ -50,11 +54,12 @@ namespace Runtime.Physics {
             if (attachedWind && attachedForceField) {
                 attachedForceField.shape = ParticleSystemForceFieldShape.Cylinder;
                 attachedForceField.startRange = 0;
-                attachedForceField.endRange = attachedWind.windRadius;
+                attachedForceField.endRange = attachedWind.windRadius * 2;
                 attachedForceField.length = attachedWind.windHeight + attachedWind.windRadius;
-                attachedForceField.directionX = attachedWind.windDirection.x;
-                attachedForceField.directionY = attachedWind.windDirection.y;
-                attachedForceField.directionZ = attachedWind.windDirection.z;
+                var force = attachedWind.windDirection * forceFieldStrength * forceFieldOverStrength.Evaluate(Mathf.Abs(attachedWind.strength));
+                attachedForceField.directionX = force.x;
+                attachedForceField.directionY = force.y;
+                attachedForceField.directionZ = force.z;
             }
         }
     }

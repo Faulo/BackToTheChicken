@@ -1,28 +1,15 @@
+using Cinemachine;
 using Runtime.Physics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Runtime.Player {
     public class CameraController : MonoBehaviour {
+        [Header("MonoBehaviour configuration")]
         [SerializeField]
-        GameObject targetObject;
-        [SerializeField, Range(0, 10)]
-        float targetDistance = 4;
-        [SerializeField, Range(0, 10)]
-        float movementDuration = 1;
-
-        Vector3 targetPosition;
-        Quaternion targetRotation;
-        Vector3 currentVelocity;
-
-        void UpdateTarget() {
-            var direction = (transform.position - targetObject.transform.position).normalized * targetDistance;
-            targetPosition = targetObject.transform.position + direction;
-            targetRotation = Quaternion.LookRotation(-direction, Vector3.up);
-
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, movementDuration);
-            transform.rotation = targetRotation;
-        }
+        FeatherController targetObject = default;
+        [SerializeField]
+        CinemachineFreeLook cinemachine = default;
 
         [Header("Wind controls")]
         [SerializeField]
@@ -50,6 +37,10 @@ namespace Runtime.Player {
             if (!axisInput) {
                 TryGetComponent(out axisInput);
             }
+            if (!cinemachine) {
+                TryGetComponent(out cinemachine);
+            }
+            UpdateCamera();
         }
 
         void Start() {
@@ -68,6 +59,21 @@ namespace Runtime.Player {
 
             leftStickAction.Enable();
             rightStickAction.Enable();
+
+            UpdateCamera();
+
+            wind.onColliderEnter += (collider) => {
+                if (collider.attachedRigidbody && collider.attachedRigidbody.TryGetComponent<FeatherController>(out var feather) && !feather.isMain) {
+                    feather.targetFeather = targetObject;
+                }
+            };
+        }
+
+        void UpdateCamera() {
+            if (cinemachine && targetObject) {
+                cinemachine.Follow = targetObject.transform;
+                cinemachine.LookAt = targetObject.transform;
+            }
         }
 
         void Update() {
@@ -97,7 +103,7 @@ namespace Runtime.Player {
                 axisInput.input = look;
             }
             if (wind) {
-                wind.direction = direction;
+                wind.direction = new Vector3(direction.x, 0, direction.y);
                 wind.strength = direction.magnitude;
             }
         }

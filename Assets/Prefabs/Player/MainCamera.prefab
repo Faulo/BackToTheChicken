@@ -60,8 +60,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 3
-  m_ZDamping: 3
+  m_YDamping: 2
+  m_ZDamping: 2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -265,8 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  targetDistance: 1
-  movementDuration: 1
+  cinemachine: {fileID: 3354399252543733441}
   invertX: 1
   invertY: 1
   axisInput: {fileID: 3354399252543733443}
@@ -386,7 +385,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 1
+    m_MaxSpeed: 0.75
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -410,7 +409,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 50
+    m_MaxSpeed: 25
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -442,7 +441,7 @@ MonoBehaviour:
     m_Radius: 0.25
   - m_Height: 0
     m_Radius: 1.5
-  - m_Height: 1
+  - m_Height: -1
     m_Radius: 0.25
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -583,8 +582,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 3
-  m_ZDamping: 3
+  m_YDamping: 2
+  m_ZDamping: 2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -709,8 +708,8 @@ MonoBehaviour:
   m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 0, z: -1}
   m_XDamping: 1
-  m_YDamping: 3
-  m_ZDamping: 3
+  m_YDamping: 2
+  m_ZDamping: 2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -998,11 +997,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_Length
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_EndRange
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_DirectionCurveX.scalar
@@ -1010,7 +1009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_DirectionCurveY.scalar
-      value: -0.000000040978193
+      value: -3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 816526046655499484, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_Parameters.m_DirectionCurveZ.scalar
@@ -1038,11 +1037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267576463340621564, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2267576463340621564, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2267576463340621564, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1082,7 +1081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8626911842698384219, guid: 803431b7db265694494074c17f60a876, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 803431b7db265694494074c17f60a876, type: 3}
