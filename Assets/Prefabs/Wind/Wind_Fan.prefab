@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: force
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 1166589136, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: wetness
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5864261079074679674, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Height
       value: 3

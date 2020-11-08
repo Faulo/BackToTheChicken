@@ -6,7 +6,6 @@ namespace Runtime.Physics {
         GameObject firePrefab = default;
 
         void OnTriggerEnter(Collider collider) {
-            Debug.Log(collider);
             if (collider.attachedRigidbody && collider.attachedRigidbody.TryGetComponent<WindRecipient>(out var recipient)) {
                 Instantiate(firePrefab, recipient.transform);
             }

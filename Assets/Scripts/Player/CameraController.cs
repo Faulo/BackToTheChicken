@@ -21,7 +21,15 @@ namespace Runtime.Player {
         [SerializeField]
         WindSource wind = default;
 
-
+        [Header("Feathers")]
+        [SerializeField]
+        int featherCount = 1;
+        [SerializeField, Range(0, 10000)]
+        float minimumForce = 100;
+        [SerializeField, Range(0, 10000)]
+        float maximumForce = 1000;
+        [SerializeField]
+        AnimationCurve forceOverCount = new AnimationCurve();
 
         InputAction lookAction;
         InputAction scrollAction;
@@ -64,7 +72,9 @@ namespace Runtime.Player {
 
             wind.onColliderEnter += (collider) => {
                 if (collider.attachedRigidbody && collider.attachedRigidbody.TryGetComponent<FeatherController>(out var feather) && !feather.isMain) {
-                    feather.targetFeather = targetObject;
+                    if (feather.SetTarget(targetObject)) {
+                        featherCount++;
+                    }
                 }
             };
         }
@@ -105,6 +115,7 @@ namespace Runtime.Player {
             if (wind) {
                 wind.direction = new Vector3(direction.x, 0, direction.y);
                 wind.strength = direction.magnitude;
+                wind.force = minimumForce + (forceOverCount.Evaluate(featherCount) * (maximumForce - minimumForce));
             }
         }
 
