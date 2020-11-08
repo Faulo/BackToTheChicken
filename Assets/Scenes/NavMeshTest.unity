@@ -683,10 +683,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f06ae635dceeb459bc6f1da2aed9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomPosMinX: 0
-  randomPosMinZ: 0
-  randomPosMaxX: 0
-  randomPosMaxZ: 0
+  randomPosMinX: -10
+  randomPosMinZ: -10
+  randomPosMaxX: 10
+  randomPosMaxZ: 10
+  waitingTimeMin: 2
+  waitingTimeMax: 5
 --- !u!195 &1882741291
 NavMeshAgent:
   m_ObjectHideFlags: 0
