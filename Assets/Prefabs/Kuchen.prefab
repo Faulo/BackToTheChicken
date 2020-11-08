@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7866847661857763639
 Transform:
@@ -73,7 +73,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8584120281481393541
 Transform:
@@ -116,6 +116,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8584120281481393541}
     m_Modifications:
+    - target: {fileID: 165445955962841144, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861040745811555518, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5950296386579461815, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -144,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind_Candle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5964330032490535679, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
 --- !u!4 &8794178522245462035 stripped
@@ -158,6 +170,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8584120281481393541}
     m_Modifications:
+    - target: {fileID: 165445955962841144, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861040745811555518, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5950296386579461815, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -182,6 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind_Candle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5964330032490535679, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
 --- !u!4 &2294849580769990763 stripped
@@ -196,6 +220,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8584120281481393541}
     m_Modifications:
+    - target: {fileID: 165445955962841144, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861040745811555518, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5950296386579461815, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -223,6 +255,10 @@ PrefabInstance:
     - target: {fileID: 5964330032490535679, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
       propertyPath: m_Name
       value: Wind_Candle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964330032490535679, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
@@ -294,9 +330,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5219132448153734401, guid: 9eb1486de1c973442809543e164769fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -257874825710137624, guid: 9eb1486de1c973442809543e164769fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9eb1486de1c973442809543e164769fd, type: 3}
       propertyPath: m_Name
       value: Torte
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9eb1486de1c973442809543e164769fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 923117080123823006, guid: 9eb1486de1c973442809543e164769fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250260490969344142, guid: 9eb1486de1c973442809543e164769fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eb1486de1c973442809543e164769fd, type: 3}
@@ -317,6 +373,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8584120281481393541}
     m_Modifications:
+    - target: {fileID: 165445955962841144, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861040745811555518, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5950296386579461815, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -364,6 +428,10 @@ PrefabInstance:
     - target: {fileID: 5964330032490535679, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
       propertyPath: m_Name
       value: Wind_Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964330032490535679, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c664f400b51a89945a9a080fcfdf3dd5, type: 3}
