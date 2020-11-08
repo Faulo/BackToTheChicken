@@ -9,7 +9,6 @@ public class CakeFireDetector : MonoBehaviour
     GameObject firePrefab;
 
     void OnCollisionEnter(Collision collision) {
-        Debug.Log(collision.gameObject);
         if (collision.gameObject.GetComponent<WindRecipient>() != null) {
             var fire = Instantiate(firePrefab, Vector3.zero, Quaternion.identity);
             fire.gameObject.transform.parent = collision.gameObject.transform;
