@@ -17,6 +17,8 @@ namespace Runtime.Chicken {
         float waitingTimeMin = 2;
         [SerializeField, Range(2, 10)]
         float waitingTimeMax = 5;
+        [SerializeField]
+        Animator animator;
 
 
         NavMeshAgent agent;
@@ -27,7 +29,11 @@ namespace Runtime.Chicken {
         void Awake() {
             if (waitingTimeMin > waitingTimeMax) {
                 Debug.LogError("The minimum waiting time must be smaller or equal to the maximum waiting time!");
-            }     
+            }
+            if (animator == null) {
+                Debug.LogError("The game object has no animator");
+                animator.GetComponentInChildren<Animator>();
+            }
         }
 
         // Start is called before the first frame update
@@ -35,28 +41,25 @@ namespace Runtime.Chicken {
         {
             agent = GetComponent<NavMeshAgent>();
             agent.destination = GetRandomVector();
+            agent.updateRotation = true;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (agent.pathStatus == NavMeshPathStatus.PathPartial ||
+                agent.pathStatus == NavMeshPathStatus.PathInvalid ||
+                !agent.hasPath) {
+                animator.SetBool("move", false);
 
-            if (agent.pathStatus == NavMeshPathStatus.PathPartial || 
-                agent.pathStatus == NavMeshPathStatus.PathInvalid || 
-                !agent.hasPath)
-            {
                 if (IsWaitingTimeOver()) {
                     var destination = GetRandomVector();
-                    targetRotation = Quaternion.LookRotation(destination - transform.position, Vector3.up);
+                    agent.destination = GetRandomVector();
                 }
 
-                if (transform.rotation == targetRotation) {
-                    agent.destination = GetRandomVector();
-                } else {
-                    var rigidbody = GetComponent<Rigidbody>();
-                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.05f);
-                }
-                
+            } else {
+                Debug.DrawLine(transform.position, transform.position + agent.velocity);
+                animator.SetBool("move", true);
             }
         }
 
