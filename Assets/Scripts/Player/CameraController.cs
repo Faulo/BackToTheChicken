@@ -1,4 +1,5 @@
 using Cinemachine;
+using Runtime.Effects;
 using Runtime.Physics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,10 +24,12 @@ namespace Runtime.Player {
 
         [Header("Feathers")]
         [SerializeField]
+        EffectEvent onFeatherCollect = default;
+        [SerializeField]
         int featherCount = 1;
         [SerializeField]
         int featherMaximum = 100;
-        float featherRatio => (float) featherCount / featherMaximum;
+        float featherRatio => (float)featherCount / featherMaximum;
         [SerializeField, Range(0, 10000)]
         float minimumForce = 100;
         [SerializeField, Range(0, 10000)]
@@ -81,6 +84,7 @@ namespace Runtime.Player {
                 if (collider.attachedRigidbody && collider.attachedRigidbody.TryGetComponent<FeatherController>(out var feather) && !feather.isMain) {
                     if (feather.SetTarget(targetObject)) {
                         featherCount++;
+                        onFeatherCollect?.Invoke(gameObject);
                     }
                 }
             };
