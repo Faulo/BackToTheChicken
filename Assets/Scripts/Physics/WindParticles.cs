@@ -51,8 +51,8 @@ namespace Runtime.Physics {
             if (attachedWind && attachedForceField) {
                 attachedForceField.shape = ParticleSystemForceFieldShape.Cylinder;
                 attachedForceField.startRange = 0;
-                attachedForceField.endRange = attachedWind.windRadius * 2;
-                attachedForceField.length = attachedWind.windHeight + attachedWind.windRadius;
+                attachedForceField.endRange = attachedWind.radius * 2;
+                attachedForceField.length = attachedWind.windHeight + attachedWind.radius;
                 var force = attachedWind.windDirection * forceFieldStrength * forceFieldOverStrength.Evaluate(Mathf.Abs(attachedWind.strength));
                 attachedForceField.directionX = force.x;
                 attachedForceField.directionY = force.y;

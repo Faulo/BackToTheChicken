@@ -26,9 +26,12 @@ namespace Runtime.Physics {
             : transform.position;
         public Vector3 windDirection => transform.rotation * direction;
         public Ray windRay => new Ray(windCenter, windDirection);
-        public float windRadius => attachedCollider
-            ? attachedCollider.radius
-            : 0;
+        public float radius {
+            get => attachedCollider
+                ? attachedCollider.radius
+                : 0;
+            set => attachedCollider.radius = value;
+        }
         public float windHeight => attachedCollider
             ? attachedCollider.height
             : 0;
@@ -51,7 +54,7 @@ namespace Runtime.Physics {
         }
         Vector3 CalculateForce(WindRecipient recipient) {
             var distance = recipient.position - windCenter;
-            float radius = distance.magnitude / (windRadius + windHeight);
+            float radius = distance.magnitude / (this.radius + windHeight);
             float multiplier = Time.deltaTime;
             multiplier *= force;
             multiplier *= strengthOverRadius.Evaluate(radius);
@@ -61,7 +64,7 @@ namespace Runtime.Physics {
         }
         Vector3 CalculateTorque(WindRecipient recipient) {
             var distance = recipient.position - windCenter;
-            float radius = distance.magnitude / (windRadius + windHeight);
+            float radius = distance.magnitude / (this.radius + windHeight);
             float multiplier = Time.deltaTime;
             multiplier *= torque;
             multiplier *= strengthOverRadius.Evaluate(radius);
@@ -69,7 +72,7 @@ namespace Runtime.Physics {
         }
         float CalculateWetness(WindRecipient recipient) {
             var distance = recipient.position - windCenter;
-            float radius = distance.magnitude / (windRadius + windHeight);
+            float radius = distance.magnitude / (this.radius + windHeight);
             float multiplier = Time.deltaTime;
             multiplier *= radius;
             return wetness * multiplier;

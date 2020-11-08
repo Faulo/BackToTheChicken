@@ -24,12 +24,19 @@ namespace Runtime.Player {
         [Header("Feathers")]
         [SerializeField]
         int featherCount = 1;
+        [SerializeField]
+        int featherMaximum = 100;
+        float featherRatio => (float) featherCount / featherMaximum;
         [SerializeField, Range(0, 10000)]
         float minimumForce = 100;
         [SerializeField, Range(0, 10000)]
         float maximumForce = 1000;
+        [SerializeField, Range(0, 10)]
+        float minimumRadius = 1;
+        [SerializeField, Range(0, 10)]
+        float maximumRadius = 10;
         [SerializeField]
-        AnimationCurve forceOverCount = new AnimationCurve();
+        AnimationCurve windOverCount = new AnimationCurve();
 
         InputAction lookAction;
         InputAction scrollAction;
@@ -115,7 +122,9 @@ namespace Runtime.Player {
             if (wind) {
                 wind.direction = new Vector3(direction.x, 0, direction.y);
                 wind.strength = direction.magnitude;
-                wind.force = minimumForce + (forceOverCount.Evaluate(featherCount) * (maximumForce - minimumForce));
+                Debug.Log(windOverCount.Evaluate(featherCount));
+                wind.force = minimumForce + (windOverCount.Evaluate(featherRatio) * (maximumForce - minimumForce));
+                wind.radius = minimumRadius + (windOverCount.Evaluate(featherRatio) * (maximumRadius - minimumRadius));
             }
         }
 
