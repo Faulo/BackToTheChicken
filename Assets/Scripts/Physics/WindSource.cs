@@ -20,7 +20,7 @@ namespace Runtime.Physics {
         [SerializeField]
         AnimationCurve strengthOverRadius = default;
         public Vector3 windCenter => attachedCollider
-            ? transform.position + attachedCollider.center
+            ? transform.position + (transform.rotation * attachedCollider.center)
             : transform.position;
         public Vector3 windDirection => transform.rotation * direction;
         public Ray windRay => new Ray(windCenter, windDirection);
