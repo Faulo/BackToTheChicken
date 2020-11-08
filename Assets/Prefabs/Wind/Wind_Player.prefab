@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1166589136, guid: a4ca1072036173846a385c645a901dad, type: 3}
+      propertyPath: wetness
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3846584730387067909, guid: a4ca1072036173846a385c645a901dad, type: 3}
       propertyPath: m_Radius
       value: 1

@@ -6,6 +6,8 @@ namespace Runtime.Physics {
         Rigidbody attachedRigidbody = default;
         [SerializeField, Range(0, 100)]
         float maximumDrag = 10;
+        [SerializeField, Range(0, 100)]
+        float maximumAngularDrag = 10;
         [SerializeField]
         AnimationCurve dragOverWetness = new AnimationCurve();
         [SerializeField, Range(0, 1)]
@@ -24,6 +26,7 @@ namespace Runtime.Physics {
         void FixedUpdate() {
             wetness = Mathf.Clamp01(wetness);
             attachedRigidbody.drag = dragOverWetness.Evaluate(wetness) * maximumDrag;
+            attachedRigidbody.angularDrag = dragOverWetness.Evaluate(wetness) * maximumAngularDrag;
         }
     }
 }

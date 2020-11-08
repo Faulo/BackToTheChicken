@@ -17,6 +17,8 @@ namespace Runtime.Physics {
         float torque = 10;
         [SerializeField, Range(0, 1)]
         float randomness = 0;
+        [SerializeField, Range(-1, 1)]
+        float wetness = 0;
         [SerializeField]
         AnimationCurve strengthOverRadius = default;
         public Vector3 windCenter => attachedCollider
@@ -44,6 +46,7 @@ namespace Runtime.Physics {
         void OnTriggerStay(Collider other) {
             if (other.attachedRigidbody && other.attachedRigidbody.TryGetComponent<WindRecipient>(out var recipient)) {
                 recipient.AddForce(CalculateForce(recipient), CalculateTorque(recipient));
+                recipient.wetness += CalculateWetness(recipient);
             }
         }
         Vector3 CalculateForce(WindRecipient recipient) {
@@ -63,6 +66,13 @@ namespace Runtime.Physics {
             multiplier *= torque;
             multiplier *= strengthOverRadius.Evaluate(radius);
             return distance * multiplier;
+        }
+        float CalculateWetness(WindRecipient recipient) {
+            var distance = recipient.position - windCenter;
+            float radius = distance.magnitude / (windRadius + windHeight);
+            float multiplier = Time.deltaTime;
+            multiplier *= radius;
+            return wetness * multiplier;
         }
         void OnDrawGizmos() {
             Gizmos.color = Color.green;
