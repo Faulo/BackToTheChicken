@@ -2133,7 +2133,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Robin Daraban\r\nMichael Heller\r\nMarkus H\xFCl\xDF\r\nLisa Kast\r\nVeronica
-    Kramme\r\nAndr\xE9 Lautner\r\nJan Martens\r\nLuisa Meinlschmid\r\nDaniel Schulz"
+    Kramme\r\nAndr\xE9 Lautner\r\nJan Martens\r\nLuisa Meinlschmid\rt\nDaniel Schulz"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
