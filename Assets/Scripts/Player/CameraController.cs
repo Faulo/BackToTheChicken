@@ -14,6 +14,10 @@ namespace Runtime.Player {
 
         [Header("Wind controls")]
         [SerializeField]
+        Vector2 mouseSensitivity = Vector2.one;
+        [SerializeField]
+        Vector2 gamepadSensitivity = Vector2.one;
+        [SerializeField]
         bool invertX = false;
         [SerializeField]
         bool invertY = false;
@@ -102,6 +106,8 @@ namespace Runtime.Player {
             Vector2 direction;
             if (Cursor.lockState == CursorLockMode.Locked) {
                 look = lookAction.ReadValue<Vector2>();
+                look.x *= mouseSensitivity.x;
+                look.y *= mouseSensitivity.y;
                 if (leftButtonDown) {
                     direction = Vector2.up;
                 } else if (rightButtonDown) {
@@ -111,6 +117,8 @@ namespace Runtime.Player {
                 }
             } else {
                 look = rightStickAction.ReadValue<Vector2>();
+                look.x *= gamepadSensitivity.x;
+                look.y *= gamepadSensitivity.y;
                 direction = leftStickAction.ReadValue<Vector2>();
             }
             if (invertX) {

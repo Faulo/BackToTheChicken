@@ -266,6 +266,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
   cinemachine: {fileID: 3354399252543733441}
+  mouseSensitivity: {x: 1, y: 0.5}
+  gamepadSensitivity: {x: 0.2, y: 1}
   invertX: 1
   invertY: 1
   axisInput: {fileID: 3354399252543733443}
@@ -454,7 +456,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 25
+    m_MaxSpeed: 100
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
