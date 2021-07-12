@@ -2,7 +2,6 @@
 using Runtime.Effects;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Runtime.Audio {
     public class AudioManager : MonoBehaviour {
