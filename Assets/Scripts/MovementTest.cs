@@ -1,28 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementTest : MonoBehaviour
-{
+public class MovementTest : MonoBehaviour {
 
-    [HideInInspector] new public Rigidbody rigidbody;
+    [HideInInspector] public new Rigidbody rigidbody;
 
     public bool useGravity = true;
 
     // Update is called once per frame
-    void Update()
-    {
-        this.transform.Translate(Vector3.forward * Time.deltaTime);   
+    void Update() {
+        transform.Translate(Vector3.forward * Time.deltaTime);
     }
 
-    void Awake()
-    {
+    void Awake() {
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         rigidbody.useGravity = false;
-        if (useGravity) rigidbody.AddForce(Physics.gravity * (rigidbody.mass * rigidbody.mass) * 0.01f);
+        if (useGravity) {
+            rigidbody.AddForce(Physics.gravity * (rigidbody.mass * rigidbody.mass) * 0.01f);
+        }
     }
 }
